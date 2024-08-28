@@ -16,6 +16,8 @@ struct HomeView: View {
     var body: some View {
         VStack {
             HStack{
+                Spacer()
+                    .frame(width: 50)
                 Image("logo")
                     .resizable()
                     .scaledToFit()
@@ -39,24 +41,85 @@ struct HomeView: View {
                     )
                     .padding(.trailing,30)
                 }
+                
+                Spacer()
+                    .frame(width: 50)
             }
             .padding(.top,40)
-            .frame(width: 400,height: 100)
+            .frame(width: 500,height: 100)
             .background(.customGreen)
+                
+            CustomTabView()
             
-            
-            Picker("",selection:$selectedTab){
-                ForEach(tabs, id:\.self){
-                    Text($0)
-                        .tag($0)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            
+//            Picker("",selection:$selectedTab){
+//                ForEach(tabs, id:\.self){
+//                    Text($0)
+//                        .tag($0)
+//                }
+//            }
+//            .pickerStyle(SegmentedPickerStyle())
+//            
             Spacer()
         }
         .padding()
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+private struct CustomTabView: View {
+    @State private var selectPicker: Tab = .student
+    @Namespace private var animation
+    
+    fileprivate var body: some View{
+        VStack{
+            animate()
+            detailView(tabs: selectPicker)
+        }
+    }
+    
+    @ViewBuilder
+    private func animate() -> some View {
+        HStack {
+            ForEach(Tab.allCases, id: \.self) { item in
+                VStack {
+                    Text(item.rawValue)
+                        .frame(maxWidth: .infinity/4, minHeight: 50)
+                        .font(.title3)
+                        .foregroundColor(selectPicker == item ? .black: .gray)
+                            
+                    if selectPicker == item {
+                        Capsule()
+                            .foregroundColor(.black)
+                            .frame(height: 3)
+                            .font(.title3)
+                            .matchedGeometryEffect(id: "info", in: animation)
+                    }
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut) {
+                        self.selectPicker = item
+                    }
+                }
+            }
+        }
+    }
+}
+
+private struct detailView: View {
+    var tabs: Tab
+    fileprivate var body: some View{
+        ScrollView(.vertical){
+            switch tabs{
+            case .student:
+                StudentView()
+            case .teacher:
+                TeacherView()
+            case .issue:
+                IssueView()
+            case .club:
+                ClubView()
+            }
+        }
     }
 }
 

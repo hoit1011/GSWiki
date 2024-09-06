@@ -9,7 +9,23 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text("메인 뷰입니다")
+        ScrollView{
+            TitleView()
+            
+            Classification(content: "대문")
+        }
+    }
+}
+
+private struct TitleView: View {
+    fileprivate var body: some View{
+        HStack{
+            Text("경소위키:대문")
+                .foregroundColor(.customGreen)
+                .font(.system(size: 28,weight: .bold))
+            
+            Spacer()
+        }
     }
 }
 

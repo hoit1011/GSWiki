@@ -25,7 +25,9 @@ struct HomeView: View {
                         .foregroundStyle(Color.white)
                         .padding(.leading,10)
                         .onTapGesture {
-                            selectPicker = nil
+                            withAnimation(.easeIn){
+                                selectPicker = nil
+                            }
                         }
                     Spacer()
                     if homeViewModel.isLogin{

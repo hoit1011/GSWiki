@@ -18,6 +18,8 @@
 		0695A0BC2C7F3CF50082DB7B /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695A0BB2C7F3CF50082DB7B /* IssueView.swift */; };
 		0695A0BE2C7F3D000082DB7B /* TeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695A0BD2C7F3D000082DB7B /* TeacherView.swift */; };
 		0695A0C02C7F3D090082DB7B /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695A0BF2C7F3D090082DB7B /* StudentView.swift */; };
+		06D508A42C8B489A00E390BE /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D508A32C8B489A00E390BE /* Title.swift */; };
+		06D508AB2C8B49FA00E390BE /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D508AA2C8B49FA00E390BE /* Classification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		0695A0BB2C7F3CF50082DB7B /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
 		0695A0BD2C7F3D000082DB7B /* TeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherView.swift; sourceTree = "<group>"; };
 		0695A0BF2C7F3D090082DB7B /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
+		06D508A32C8B489A00E390BE /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		06D508AA2C8B49FA00E390BE /* Classification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 		064A24312C79AD5B00387D3A /* GSwiki */ = {
 			isa = PBXGroup;
 			children = (
+				06D508A52C8B497C00E390BE /* Component */,
 				0695A0B22C7F342A0082DB7B /* Model */,
 				064A24402C7A1D0A00387D3A /* Feature */,
 				064A24322C79AD5B00387D3A /* GSwikiApp.swift */,
@@ -107,6 +112,7 @@
 		067A23DC2C8554F600A209C5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				06D508A22C8B484600E390BE /* Component */,
 				067A23DD2C85550300A209C5 /* MainView.swift */,
 			);
 			path = Main;
@@ -150,6 +156,22 @@
 				0695A0B92C7F3CEC0082DB7B /* ClubView.swift */,
 			);
 			path = Club;
+			sourceTree = "<group>";
+		};
+		06D508A22C8B484600E390BE /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				06D508A32C8B489A00E390BE /* Title.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		06D508A52C8B497C00E390BE /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				06D508AA2C8B49FA00E390BE /* Classification.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D508A42C8B489A00E390BE /* Title.swift in Sources */,
 				064A24332C79AD5B00387D3A /* GSwikiApp.swift in Sources */,
 				067A23DE2C85550300A209C5 /* MainView.swift in Sources */,
 				0695A0BA2C7F3CEC0082DB7B /* ClubView.swift in Sources */,
@@ -230,6 +253,7 @@
 				0695A0BC2C7F3CF50082DB7B /* IssueView.swift in Sources */,
 				0695A0BE2C7F3D000082DB7B /* TeacherView.swift in Sources */,
 				0695A0C02C7F3D090082DB7B /* StudentView.swift in Sources */,
+				06D508AB2C8B49FA00E390BE /* Classification.swift in Sources */,
 				0695A0B42C7F343A0082DB7B /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
